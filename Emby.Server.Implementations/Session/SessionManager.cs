@@ -411,6 +411,15 @@ namespace Emby.Server.Implementations.Session
             session.PlayState.RepeatMode = info.RepeatMode;
             session.PlaylistItemId = info.PlaylistItemId;
 
+            if (info.PlaybackRate is null)
+            {
+                session.PlayState.PlaybackRate = 1f;
+            }
+            else
+            {
+                session.PlayState.PlaybackRate = (float?)Math.Round(Math.Clamp((byte)info.PlaybackRate, 0.1f, 10.0f), 1);
+            }
+
             var nowPlayingQueue = info.NowPlayingQueue;
 
             if (nowPlayingQueue?.Length > 0)

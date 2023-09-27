@@ -70,5 +70,11 @@ namespace MediaBrowser.Model.Session
         /// </summary>
         /// <value>The live stream identifier.</value>
         public string LiveStreamId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the playback rate.
+        /// </summary>
+        /// <value>The playback rate.</value>
+        public float? PlaybackRate { get; set; } = 1.0f;
     }
 }

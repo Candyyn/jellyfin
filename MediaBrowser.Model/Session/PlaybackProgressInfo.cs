@@ -110,5 +110,11 @@ namespace MediaBrowser.Model.Session
         public QueueItem[] NowPlayingQueue { get; set; }
 
         public string PlaylistItemId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the repeat mode.
+        /// </summary>
+        /// <value>The repeat mode.</value>
+        public float? PlaybackRate { get; set; }
     }
 }
